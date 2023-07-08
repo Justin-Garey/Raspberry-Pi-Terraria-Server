@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# Install dependencies
+sudo apt install -y wget screen
+
+# Install server
+wget https://github.com/Pryaxis/TShock/releases/download/v5.2.0/TShock-5.2-for-Terraria-1.4.4.9-linux-arm64-Release.zip
+unzip TShock*.zip
+tar -xvf TShock*.tar
+
+# Install .net
+wget https://dot.net/v1/dotnet-install.sh
+sudo bash ./dotnet-install.sh --channel LTS --install-dir /opt/dotnet/
+sudo ln -s /opt/dotnet/dotnet /usr/local/bin
+echo 'export DOTNET_ROOT=/opt/dotnet' >> ~/.bashrc
+echo 'export PATH=$PATH:$HOME/.dotnet' >> ~/.bashrc
+source ~/.bashrc
+
+# Create worlds folder
+mkdir Worlds

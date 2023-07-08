@@ -1,0 +1,5 @@
+#!/bin/bash
+
+WORLD_NAME="world"
+
+echo exit | ./TShock.Server -port 7777 -world ./Worlds/$WORLD_NAME.wld -maxplayers 8 -autocreate 1 -worldevil random -difficulty 0

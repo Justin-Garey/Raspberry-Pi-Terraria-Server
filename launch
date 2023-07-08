@@ -1,0 +1,5 @@
+#!/bin/bash
+
+WORLD_NAME="world"
+
+./TShock.Server -world ./Worlds/$WORLD_NAME.wld
